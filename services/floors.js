@@ -7,7 +7,7 @@ const getAllFloors = async () => {
 };
 const addFloor = async (floorData) => {
 	try {
-		if (floorsData.find((item) => item === floorData.floorNumber))
+		if (floorsData.some((item) => item === floorData.floorNumber))
 			throw new Error("Floor number already exists");
 		floorData._id = crypto.randomBytes(16).toString("hex");
 		floorData.createdAt = new Date();
